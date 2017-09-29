@@ -22,3 +22,8 @@ LyngkTestCase.prototype.test2 = function () {
     }
     assertEquals(count,43);
 }
+
+LyngkTestCase.prototype.test3 = function () {
+    var coord = new Lyngk.Coordinates('B',5);
+    assertEquals(coord.toString(),'B5');
+}
