@@ -27,3 +27,14 @@ LyngkTestCase.prototype.test3 = function () {
     var coord = new Lyngk.Coordinates('B',5);
     assertEquals(coord.toString(),'B5');
 }
+
+LyngkTestCase.prototype.test4 = function () {
+    var coord = new Lyngk.Coordinates('qsd',30);
+    assertEquals(coord.toString(),'invalid');
+}
+
+LyngkTestCase.prototype.test5 = function () {
+    var coord = new Lyngk.Coordinates('E',6);
+    var coord2 = coord.clone();
+    assertEquals(coord.toString(),coord2.toString());
+}

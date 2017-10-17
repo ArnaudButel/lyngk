@@ -1,6 +1,7 @@
 "use strict";
 
 Lyngk.Coordinates = function (c, l) {
+    var coord = c+l;
     var plateau = ['C1',
         'B2', 'C2', 'D2', 'E2',
         'A3', 'B3', 'C3', 'D3', 'E3', 'F3', 'G3',
@@ -12,7 +13,17 @@ Lyngk.Coordinates = function (c, l) {
         'G9'];
 
     this.isValide = function () {
-        return (plateau.indexOf(c+l)>=0);
+        return (plateau.indexOf(coord)>=0);
+    }
+
+
+    this.toString = function () {
+        if (this.isValide()) {
+            return coord;
+        }
+        else {
+            return 'invalid'
+        }
     }
 
 };
