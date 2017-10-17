@@ -38,3 +38,9 @@ LyngkTestCase.prototype.test5 = function () {
     var coord2 = coord.clone();
     assertEquals(coord.toString(),coord2.toString());
 }
+
+LyngkTestCase.prototype.test6 = function() {
+    var coord = new Lyngk.Coordinates('C',1);
+    var coord2 = new Lyngk.Coordinates('E',6);
+    asserNotEquals(coord.hash(),coord2.hash());
+}

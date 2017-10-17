@@ -27,8 +27,7 @@ Lyngk.Coordinates = function (c, l) {
             return coord;
         }
         else {
-            return 'invalid'
+            return 'invalid';
         }
     }
-
 };
