@@ -18,6 +18,9 @@ Lyngk.Intersection = function (c) {
         else if (pieces.length<5) {
             state = Lyngk.State.STACK;
         }
+        else {
+            state = Lyngk.State.FULL_STACK;
+        }
     };
 
     this.getColor= function() {
