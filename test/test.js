@@ -59,4 +59,16 @@ LyngkTestCase.prototype.test8 = function () {
     assertEquals(piece.getColor(),Lyngk.Color.BLUE);
     assertEquals(inter.getState(),Lyngk.State.ONE_PIECE);
     assertEquals(inter.getColor(),Lyngk.Color.BLUE);
-}
+};
+
+
+LyngkTestCase.prototype.test9 = function() {
+    var coord = new Lyngk.Coordinates('C',3);
+    var inter = new Lyngk.Intersection(coord);
+    var piece = new Lyngk.Piece(Lyngk.Color.BLUE);
+    var piece2 = new Lyngk.Piece(Lyngk.Color.RED);
+    inter.putPiece(piece);
+    inter.putPiece(piece2);
+    assertEquals(inter.getState(),Lyngk.State.STACK);
+    assertEquals(inter.getColor(),Lyngk.Color.RED);
+};

@@ -15,9 +15,17 @@ Lyngk.Intersection = function (c) {
         if (pieces.length=== 1) {
             state = Lyngk.State.ONE_PIECE;
         }
+        else if (pieces.length<5) {
+            state = Lyngk.State.STACK;
+        }
     };
 
     this.getColor= function() {
-        return pieces[pieces.length - 1].getColor();
+        if (this.getState() !== Lyngk.State.VACANT) {
+            return pieces[pieces.length - 1].getColor();
+        }
+        else {
+            return Lyngk.Color.WHITE;
+        }
     }
 };
