@@ -17,6 +17,11 @@ Lyngk.Coordinates = function (c, l) {
     }
 
 
+    this.clone = function () {
+        return new Lyngk.Coordinates(c,l);
+    }
+
+
     this.toString = function () {
         if (this.isValide()) {
             return coord;
