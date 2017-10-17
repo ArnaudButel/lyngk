@@ -90,3 +90,12 @@ LyngkTestCase.prototype.test10 = function() {
     assertEquals(inter.getState(),Lyngk.State.FULL_STACK);
     assertEquals(inter.getColor(),Lyngk.Color.IVORY);
 };
+
+LyngkTestCase.prototype.test11 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getPlateau();
+    for( var i in plateau) {
+        assertEquals(i.getState(), Lynk.State.ONE_PIECE);
+    }
+};

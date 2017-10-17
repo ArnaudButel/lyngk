@@ -28,7 +28,7 @@ Lyngk.Intersection = function (c) {
             return pieces[pieces.length - 1].getColor();
         }
         else {
-            return Lyngk.Color.WHITE;
+            return null;
         }
     }
 };
