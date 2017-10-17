@@ -42,5 +42,5 @@ LyngkTestCase.prototype.test5 = function () {
 LyngkTestCase.prototype.test6 = function() {
     var coord = new Lyngk.Coordinates('C',1);
     var coord2 = new Lyngk.Coordinates('E',6);
-    asserNotEquals(coord.hash(),coord2.hash());
+    assertNotEquals(coord.hash(),coord2.hash());
 }

@@ -30,4 +30,8 @@ Lyngk.Coordinates = function (c, l) {
             return 'invalid';
         }
     }
+
+    this.hash = function() {
+        return plateau.indexOf(coord);
+    }
 };
