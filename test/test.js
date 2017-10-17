@@ -5,7 +5,7 @@ var LyngkTestCase = TestCase("LyngkTestCase");
 LyngkTestCase.prototype.test1 = function(){
     var coord1 = new Lyngk.Coordinates('A' , 1);
     assertFalse(coord1.isValide());
-}
+};
 
 LyngkTestCase.prototype.test2 = function () {
     var ligne = ['1','2','3','4','5','6','7','8','9'];
@@ -21,26 +21,32 @@ LyngkTestCase.prototype.test2 = function () {
         }
     }
     assertEquals(count,43);
-}
+};
 
 LyngkTestCase.prototype.test3 = function () {
     var coord = new Lyngk.Coordinates('B',5);
     assertEquals(coord.toString(),'B5');
-}
+};
 
 LyngkTestCase.prototype.test4 = function () {
     var coord = new Lyngk.Coordinates('qsd',30);
     assertEquals(coord.toString(),'invalid');
-}
+};
 
 LyngkTestCase.prototype.test5 = function () {
     var coord = new Lyngk.Coordinates('E',6);
     var coord2 = coord.clone();
     assertEquals(coord.toString(),coord2.toString());
-}
+};
 
 LyngkTestCase.prototype.test6 = function() {
     var coord = new Lyngk.Coordinates('C',1);
     var coord2 = new Lyngk.Coordinates('E',6);
     assertNotEquals(coord.hash(),coord2.hash());
-}
+};
+
+LyngkTestCase.prototype.test7 = function() {
+    var coord = new Lyngk.Coordinates('C',1);
+    var intersec = new Lyngk.Intersection(coord)
+    assertEquals(intersec.getState(),0);
+};

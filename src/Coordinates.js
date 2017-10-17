@@ -14,12 +14,12 @@ Lyngk.Coordinates = function (c, l) {
 
     this.isValide = function () {
         return (plateau.indexOf(coord)>=0);
-    }
+    };
 
 
     this.clone = function () {
         return new Lyngk.Coordinates(c,l);
-    }
+    };
 
 
     this.toString = function () {
@@ -29,9 +29,9 @@ Lyngk.Coordinates = function (c, l) {
         else {
             return 'invalid';
         }
-    }
+    };
 
     this.hash = function() {
         return plateau.indexOf(coord);
-    }
+    };
 };
