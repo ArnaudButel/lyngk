@@ -94,8 +94,9 @@ LyngkTestCase.prototype.test10 = function() {
 LyngkTestCase.prototype.test11 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
-    var plateau = jeu.getPlateau();
+    var plateau = jeu.getInters()
     for( var i in plateau) {
-        assertEquals(i.getState(), Lynk.State.ONE_PIECE);
+        assertEquals(Lyngk.State.ONE_PIECE, plateau[i].getState());
+        assertEquals(Lyngk.Color.BLUE, plateau[i].getColor());
     }
 };
