@@ -94,9 +94,18 @@ LyngkTestCase.prototype.test10 = function() {
 LyngkTestCase.prototype.test11 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
-    var plateau = jeu.getInters()
+    var plateau = jeu.getInters();
     for( var i in plateau) {
         assertEquals(Lyngk.State.ONE_PIECE, plateau[i].getState());
-        assertEquals(Lyngk.Color.BLUE, plateau[i].getColor());
+        //assertEquals(Lyngk.Color.BLUE, plateau[i].getColor());
+    }
+};
+
+LyngkTestCase.prototype.test12 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getInters();
+    for( var i in plateau) {
+        assertEquals(Lyngk.State.ONE_PIECE, plateau[i].getState());
     }
 };
