@@ -169,4 +169,16 @@ LyngkTestCase.prototype.test16 = function () {
     assertEquals(Lyngk.State.STACK,plateau[B2.hash()].getState());
     assertEquals(3,plateau[B2.hash()].hauteur());
     assertEquals(couleurB3,plateau[B2.hash()].getColor());
-}
+};
+
+LyngkTestCase.prototype.test17 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getplateau();
+    var B3 = new Lyngk.Coordinates('B',3);
+    var B2 = new Lyngk.Coordinates('B',2);
+    jeu.move(B2,B3);
+    jeu.move(B3,B2);
+    assertEquals(Lyngk.State.STACK,plateau[B3.hash()].getState());
+    assertEquals(Lyngk.State.VACANT,plateau[B2.hash()].getState());
+};
