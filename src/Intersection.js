@@ -30,5 +30,10 @@ Lyngk.Intersection = function (c) {
         else {
             return null;
         }
+    };
+
+    this.hauteur = function () {
+        return pieces.length;
     }
+
 };

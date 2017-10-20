@@ -115,6 +115,6 @@ LyngkTestCase.prototype.test13 = function () {
     jeu.initPlateau();
     var plateau = jeu.getInters();
     for( var i in plateau) {
-        assertEquals(1, plateau[i].getNbPieces());
+        assertEquals(1, plateau[i].hauteur());
     }
 };
