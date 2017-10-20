@@ -182,3 +182,16 @@ LyngkTestCase.prototype.test17 = function () {
     assertEquals(Lyngk.State.STACK,plateau[B3.hash()].getState());
     assertEquals(Lyngk.State.VACANT,plateau[B2.hash()].getState());
 };
+
+LyngkTestCase.prototype.test18 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getplateau();
+    var B3 = new Lyngk.Coordinates('B',3);
+    var B2 = new Lyngk.Coordinates('B',2);
+    var C2 = new Lyngk.Coordinates('C',2);
+    jeu.move(B2,B3);
+    jeu.move(B3,C2);
+    assertEquals(Lyngk.State.STACK,plateau[B3.hash()].getState());
+    assertEquals(Lyngk.State.VACANT,plateau[C2.hash()].getState());
+};
