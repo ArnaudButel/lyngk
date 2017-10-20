@@ -27,7 +27,7 @@ Lyngk.Engine = function () {
 
         //création des intersections
         for( i in Lyngk.plateau) {
-            plateau.push(new Lyngk.Intersection( new Lyngk.Coordinates(i[0],i[1])));
+            plateau.push(new Lyngk.Intersection( (new Lyngk.Coordinates(i[0],i[1])).hash()));
         }
 
         //mélange des pièces
