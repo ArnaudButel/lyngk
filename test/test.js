@@ -94,7 +94,7 @@ LyngkTestCase.prototype.test10 = function() {
 LyngkTestCase.prototype.test11 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
-    var plateau = jeu.getInters();
+    var plateau = jeu.getplateau();
     for( var i in plateau) {
         assertEquals(Lyngk.State.ONE_PIECE, plateau[i].getState());
         //assertEquals(Lyngk.Color.BLUE, plateau[i].getColor());
@@ -104,7 +104,7 @@ LyngkTestCase.prototype.test11 = function () {
 LyngkTestCase.prototype.test12 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
-    var plateau = jeu.getInters();
+    var plateau = jeu.getplateau();
     for( var i in plateau) {
         assertEquals(Lyngk.State.ONE_PIECE, plateau[i].getState());
     }
@@ -113,8 +113,31 @@ LyngkTestCase.prototype.test12 = function () {
 LyngkTestCase.prototype.test13 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
-    var plateau = jeu.getInters();
+    var plateau = jeu.getplateau();
     for( var i in plateau) {
         assertEquals(1, plateau[i].hauteur());
+    }
+};
+
+LyngkTestCase.prototype.test14 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getplateau();
+
+    var piece = new Lyngk.Piece(Lyngk.Color.BLUE);
+    var piece2 = new Lyngk.Piece(Lyngk.Color.RED);
+    var piece3 = new Lyngk.Piece(Lyngk.Color.IVORY);
+
+    for( var i in plateau) {;
+        assertEquals(plateau[i].getState(),Lyngk.State.ONE_PIECE);
+        plateau[i].putPiece(piece)
+        assertEquals(plateau[i].getState(),Lyngk.State.STACK);
+        assertEquals(plateau[i].getColor(),Lyngk.Color.BLUE);
+        plateau[i].putPiece(piece2);
+        assertEquals(plateau[i].getState(),Lyngk.State.STACK);
+        assertEquals(plateau[i].getColor(),Lyngk.Color.RED);
+        plateau[i].putPiece(piece3);
+        assertEquals(plateau[i].getState(),Lyngk.State.STACK);
+        assertEquals(plateau[i].getColor(),Lyngk.Color.IVORY);
     }
 };

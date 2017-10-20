@@ -4,7 +4,7 @@
 Lyngk.Color = {BLACK: 0, IVORY: 1, BLUE: 2, RED: 3, GREEN: 4, WHITE: 5};
 
 Lyngk.Engine = function () {
-    var inter = [];
+    var plateau = [];
     var pieces = [];
 
 
@@ -27,7 +27,7 @@ Lyngk.Engine = function () {
 
         //création des intersections
         for( i in Lyngk.plateau) {
-            inter.push(new Lyngk.Intersection( new Lyngk.Coordinates(i[0],i[1])));
+            plateau.push(new Lyngk.Intersection( new Lyngk.Coordinates(i[0],i[1])));
         }
 
         //mélange des pièces
@@ -39,13 +39,13 @@ Lyngk.Engine = function () {
         }
 
         //placement des pièces
-        for( i in inter) {
-            inter[i].putPiece(pieces[i]);
+        for( i in plateau) {
+            plateau[i].putPiece(pieces[i]);
         }
     };
 
-    this.getInters = function () {
-        return inter;
+    this.getplateau = function () {
+        return plateau;
     }
 
 };
