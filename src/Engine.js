@@ -51,9 +51,11 @@ Lyngk.Engine = function () {
     };
 
     this.move = function (coordDepart, coordDestination) {
-        var piece = plateau[coordDepart.hash()].takePiece();
-        for (var i in piece) {
-            plateau[coordDestination.hash()].putPiece(piece[i]);
+        if (plateau[coordDestination.hash()].getState() !== Lyngk.State.VACANT) {
+            var piece = plateau[coordDepart.hash()].takePiece();
+            for (var i in piece) {
+                plateau[coordDestination.hash()].putPiece(piece[i]);
+            }
         }
     }
 
