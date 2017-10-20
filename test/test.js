@@ -109,3 +109,12 @@ LyngkTestCase.prototype.test12 = function () {
         assertEquals(Lyngk.State.ONE_PIECE, plateau[i].getState());
     }
 };
+
+LyngkTestCase.prototype.test13 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getInters();
+    for( var i in plateau) {
+        assertEquals(1, plateau[i].getNbPieces());
+    }
+};
