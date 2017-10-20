@@ -25,9 +25,11 @@ Lyngk.Engine = function () {
             }
         }
 
-        //création des intersections
+        //creation des intersections
         for( i in Lyngk.plateau) {
-            plateau.push(new Lyngk.Intersection( (new Lyngk.Coordinates(i[0],i[1])).hash()));
+            //plateau.push(new Lyngk.Intersection( (new Lyngk.Coordinates(i[0],i[1]))));
+            var coordtemp = new Lyngk.Coordinates(Lyngk.plateau[i][0],Lyngk.plateau[i][1]);
+            plateau[coordtemp.hash()] = new Lyngk.Intersection();
         }
 
         //mélange des pièces
@@ -46,6 +48,11 @@ Lyngk.Engine = function () {
 
     this.getplateau = function () {
         return plateau;
+    };
+
+    this.deplacerPiece = function (coordDepart, coordDestination) {
+        var piece = plateau[coordDepart.hash()].takePiece();
+        plateau[coordDestination.hash()].putPiece(piece);
     }
 
 };

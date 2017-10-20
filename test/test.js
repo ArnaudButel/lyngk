@@ -47,13 +47,13 @@ LyngkTestCase.prototype.test6 = function() {
 
 LyngkTestCase.prototype.test7 = function() {
     var coord = new Lyngk.Coordinates('C',1);
-    var intersec = new Lyngk.Intersection(coord);
+    var intersec = new Lyngk.Intersection();
     assertEquals(intersec.getState(),Lyngk.State.VACANT);
 };
 
 LyngkTestCase.prototype.test8 = function () {
     var coord = new Lyngk.Coordinates('C',3);
-    var inter = new Lyngk.Intersection(coord);
+    var inter = new Lyngk.Intersection();
     var piece = new Lyngk.Piece(Lyngk.Color.BLUE);
     inter.putPiece(piece);
     assertEquals(piece.getColor(),Lyngk.Color.BLUE);
@@ -64,7 +64,7 @@ LyngkTestCase.prototype.test8 = function () {
 
 LyngkTestCase.prototype.test9 = function() {
     var coord = new Lyngk.Coordinates('C',3);
-    var inter = new Lyngk.Intersection(coord);
+    var inter = new Lyngk.Intersection();
     var piece = new Lyngk.Piece(Lyngk.Color.BLUE);
     var piece2 = new Lyngk.Piece(Lyngk.Color.RED);
     inter.putPiece(piece);
@@ -76,7 +76,7 @@ LyngkTestCase.prototype.test9 = function() {
 
 LyngkTestCase.prototype.test10 = function() {
     var coord = new Lyngk.Coordinates('C',3);
-    var inter = new Lyngk.Intersection(coord);
+    var inter = new Lyngk.Intersection();
     var piece = new Lyngk.Piece(Lyngk.Color.BLUE);
     var piece2 = new Lyngk.Piece(Lyngk.Color.RED);
     var piece3 = new Lyngk.Piece(Lyngk.Color.BLUE);
@@ -145,8 +145,13 @@ LyngkTestCase.prototype.test14 = function () {
 LyngkTestCase.prototype.test15 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
+    var plateau = jeu.getplateau();
     var A3 = new Lyngk.Coordinates('A',3);
     var B3 = new Lyngk.Coordinates('B',3);
+    var couleurA3 = plateau[A3.hash()].getColor();
     jeu.deplacerPiece(A3,B3);
+    assertEquals(plateau[A3.hash()].getState(),Lyngk.State.VACANT);
+    assertEquals(plateau[B3.hash()].getState(),Lyngk.State.STACK);
+    assertEquals(plateau[B3.hash()].getColor(),couleurA3);
 
 };
