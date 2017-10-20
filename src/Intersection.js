@@ -16,8 +16,8 @@ Lyngk.Intersection = function () {
     };
 
     this.takePiece = function () {
-        var pieceRetour = pieces[pieces.length - 1];
-        pieces.pop();
+        var pieceRetour = pieces;
+        pieces = [];
         this.verifierEtat();
         return pieceRetour;
     };

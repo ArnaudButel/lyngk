@@ -50,9 +50,11 @@ Lyngk.Engine = function () {
         return plateau;
     };
 
-    this.deplacerPiece = function (coordDepart, coordDestination) {
+    this.move = function (coordDepart, coordDestination) {
         var piece = plateau[coordDepart.hash()].takePiece();
-        plateau[coordDestination.hash()].putPiece(piece);
+        for (var i in piece) {
+            plateau[coordDestination.hash()].putPiece(piece[i]);
+        }
     }
 
 };

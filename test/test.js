@@ -149,9 +149,24 @@ LyngkTestCase.prototype.test15 = function () {
     var A3 = new Lyngk.Coordinates('A',3);
     var B3 = new Lyngk.Coordinates('B',3);
     var couleurA3 = plateau[A3.hash()].getColor();
-    jeu.deplacerPiece(A3,B3);
+    jeu.move(A3,B3);
     assertEquals(plateau[A3.hash()].getState(),Lyngk.State.VACANT);
     assertEquals(plateau[B3.hash()].getState(),Lyngk.State.STACK);
     assertEquals(plateau[B3.hash()].getColor(),couleurA3);
-
 };
+
+LyngkTestCase.prototype.test16 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getplateau();
+    var A3 = new Lyngk.Coordinates('A',3);
+    var B3 = new Lyngk.Coordinates('B',3);
+    var B2 = new Lyngk.Coordinates('B',2);
+    jeu.move(A3,B3);
+    var couleurB3 = plateau[B3.hash()].getColor();
+    jeu.move(B3,B2);
+    assertEquals(Lyngk.State.VACANT,plateau[B3.hash()].getState());
+    assertEquals(Lyngk.State.STACK,plateau[B2.hash()].getState());
+    assertEquals(3,plateau[B2.hash()].hauteur());
+    assertEquals(couleurB3,plateau[B2.hash()].getColor());
+}
