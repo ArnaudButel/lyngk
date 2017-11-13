@@ -34,6 +34,10 @@ Lyngk.Engine = function () {
 
         //mélange des pièces
         for (i = pieces.length-1; i >=0; i--) {
+            //mélange avec une seed : prendre le fichier seedrandom.js sur github.com/davidbau/seedrandom
+            //Dans jsTestDriver.conf load - src/seedrandom.js
+            //test.js "use strict"; var LynkTestCase = TestCase("___"); Math.seedrandom("____");
+            //laisser le Math.random(), juste ajouter la ligne au début de test.js.
             randomIndex = Math.floor(Math.random()*(i+1));
             itemAtIndex = pieces[randomIndex];
             pieces[randomIndex] = pieces[i];
@@ -51,11 +55,8 @@ Lyngk.Engine = function () {
     };
 
     this.move = function (coordDepart, coordDestination) {
-        //trouver comment convertir le char en ascii
-        //var c0 = parseInt(coordDepart.toString()[0]);
         var c0 = coordDepart.toString().charCodeAt(0);
         var l0 = coordDepart.toString()[1];
-        //var c1 = parseInt(coordDestination.toString()[0]);
         var c1 = coordDestination.toString().charCodeAt(0);
         var l1 = coordDestination.toString()[1];
         if ( c0-c1 === 0 || l0-l1 === 0 || c0-c1 === l0-l1) {

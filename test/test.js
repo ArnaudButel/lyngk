@@ -195,3 +195,23 @@ LyngkTestCase.prototype.test18 = function () {
     assertEquals(Lyngk.State.STACK,plateau[B3.hash()].getState());
     assertEquals(Lyngk.State.ONE_PIECE,plateau[C2.hash()].getState());
 };
+
+LyngkTestCase.prototype.test19 = function() {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getplateau();
+    var B4 = new Lyngk.Coordinates('B',4);
+    var B3 = new Lyngk.Coordinates('B',3);
+    var B2 = new Lyngk.Coordinates('B',2);
+    var B5 = new Lyngk.Coordinates('B',5);
+    jeu.move(B5,B2);
+    assertEquals(Lyngk.State.VACANT,plateau[B2.hash()].getState());
+    assertEquals(Lyngk.State.STACK,plateau[B5.hash()].getState());
+    jeu.move(B3,B4);
+    jeu.move(B4,B5);
+    jeu.move(B5,B2);
+    assertEquals(Lyngk.State.STACK,plateau[B2.hash()].getState());
+    assertEquals(Lyngk.State.VACANT,plateau[B3.hash()].getState());
+    assertEquals(Lyngk.State.VACANT,plateau[B4.hash()].getState());
+    assertEquals(Lyngk.State.VACANT,plateau[B5.hash()].getState());
+};
