@@ -55,16 +55,38 @@ Lyngk.Engine = function () {
     };
 
     this.move = function (coordDepart, coordDestination) {
+        var compteur=0;
+        var autorise = true;
         var c0 = coordDepart.toString().charCodeAt(0);
         var l0 = coordDepart.toString()[1];
         var c1 = coordDestination.toString().charCodeAt(0);
         var l1 = coordDestination.toString()[1];
+        var coordtest;
         if ( c0-c1 === 0 || l0-l1 === 0 || c0-c1 === l0-l1) {
             if (plateau[coordDestination.hash()].getState() !== Lyngk.State.VACANT) {
-                var piece = plateau[coordDepart.hash()].takePiece();
-                for (var i in piece) {
-                    plateau[coordDestination.hash()].putPiece(piece[i]);
+                while (autorise && ( c0!=c1 || l0!=l1 ))
+                {
+                    if (c0<c1)      c0++;
+                    else if (c0>c1) c0--;
+                    if (l0<l1)      l0++;
+                    else if (l0>l1) l0--;
+                    coordtest = new Lyngk.Coordinates(String.fromCharCode(c0),l0);
+                    if (plateau[coordtest.hash()].getState() !== Lyngk.State.VACANT && (c0!=c1 || l0!=l1)) {
+                        autorise=false;
+                    }
                 }
+            }
+            else {
+                autorise = false;
+            }
+        }
+        else {
+            autorise = false;
+        }
+        if (autorise) {
+            var piece = plateau[coordDepart.hash()].takePiece();
+            for (var i in piece) {
+                plateau[coordDestination.hash()].putPiece(piece[i]);
             }
         }
     }
