@@ -193,5 +193,5 @@ LyngkTestCase.prototype.test18 = function () {
     jeu.move(B2,B3);
     jeu.move(B3,C2);
     assertEquals(Lyngk.State.STACK,plateau[B3.hash()].getState());
-    assertEquals(Lyngk.State.VACANT,plateau[C2.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE,plateau[C2.hash()].getState());
 };

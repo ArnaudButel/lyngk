@@ -51,10 +51,19 @@ Lyngk.Engine = function () {
     };
 
     this.move = function (coordDepart, coordDestination) {
-        if (plateau[coordDestination.hash()].getState() !== Lyngk.State.VACANT) {
-            var piece = plateau[coordDepart.hash()].takePiece();
-            for (var i in piece) {
-                plateau[coordDestination.hash()].putPiece(piece[i]);
+        //trouver comment convertir le char en ascii
+        //var c0 = parseInt(coordDepart.toString()[0]);
+        var c0 = coordDepart.toString().charCodeAt(0);
+        var l0 = coordDepart.toString()[1];
+        //var c1 = parseInt(coordDestination.toString()[0]);
+        var c1 = coordDestination.toString().charCodeAt(0);
+        var l1 = coordDestination.toString()[1];
+        if ( c0-c1 === 0 || l0-l1 === 0 || c0-c1 === l0-l1) {
+            if (plateau[coordDestination.hash()].getState() !== Lyngk.State.VACANT) {
+                var piece = plateau[coordDepart.hash()].takePiece();
+                for (var i in piece) {
+                    plateau[coordDestination.hash()].putPiece(piece[i]);
+                }
             }
         }
     }
