@@ -75,18 +75,14 @@ Lyngk.Engine = function () {
                         autorise=false;
                     }
                 }
-            }
-            else {
-                autorise = false;
-            }
-        }
-        else {
-            autorise = false;
-        }
-        if (autorise) {
-            var piece = plateau[coordDepart.hash()].takePiece();
-            for (var i in piece) {
-                plateau[coordDestination.hash()].putPiece(piece[i]);
+                if (autorise) {
+                    if (plateau[coordDepart.hash()].getState() !== Lyngk.State.FULL_STACK) {
+                        var piece = plateau[coordDepart.hash()].takePiece();
+                        for (var i in piece) {
+                            plateau[coordDestination.hash()].putPiece(piece[i]);
+                        }
+                    }
+                }
             }
         }
     }
