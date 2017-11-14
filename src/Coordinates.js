@@ -11,29 +11,28 @@ Lyngk.plateau = ['C1',
     'G9'];
 
 Lyngk.Coordinates = function (c, l) {
-    var coord = c+l;
+    var coord = c + l;
 
 
     this.isValide = function () {
-        return (Lyngk.plateau.indexOf(coord)>=0);
+        return (Lyngk.plateau.indexOf(coord) >= 0);
     };
 
 
     this.clone = function () {
-        return new Lyngk.Coordinates(c,l);
+        return new Lyngk.Coordinates(c, l);
     };
 
 
     this.toString = function () {
         if (this.isValide()) {
             return coord;
-        }
-        else {
+        } else {
             return 'invalid';
         }
     };
 
-    this.hash = function() {
+    this.hash = function () {
         return Lyngk.plateau.indexOf(coord);
     };
 };

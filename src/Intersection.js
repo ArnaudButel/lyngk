@@ -23,31 +23,23 @@ Lyngk.Intersection = function () {
     };
 
     this.verifierEtat = function () {
-        if (pieces.length=== 0) {
-            state = Lyngk.State.VACANT;
-        }
-        else if (pieces.length=== 1) {
-            state = Lyngk.State.ONE_PIECE;
-        }
-        else if (pieces.length<5) {
+        state = Lyngk.State.FULL_STACK;
+        if (pieces.length <= 1) {
+            state = pieces.length;
+        } else if (pieces.length < 5) {
             state = Lyngk.State.STACK;
-        }
-        else {
-            state = Lyngk.State.FULL_STACK;
         }
     };
 
-    this.getColor= function() {
+    this.getColor = function () {
         if (this.getState() !== Lyngk.State.VACANT) {
             return pieces[pieces.length - 1].getColor();
-        }
-        else {
+        } else {
             return null;
         }
     };
 
     this.hauteur = function () {
         return pieces.length;
-    }
-
+    };
 };
