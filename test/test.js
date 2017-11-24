@@ -295,3 +295,12 @@ LyngkTestCase.prototype.test24 = function () {
     jeu.initPlateau();
     assertEquals(1, jeu.getJoueur());
 };
+
+LyngkTestCase.prototype.test25 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var B2 = new Lyngk.Coordinates('B', 2);
+    var C2 = new Lyngk.Coordinates('C', 2);
+    jeu.move(B2, C2);
+    assertEquals(2, jeu.getJoueur());
+};
