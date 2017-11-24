@@ -1,7 +1,7 @@
 'use strict';
 
 var LyngkTestCase = TestCase("LyngkTestCase");
-Math.seedrandom("sd5v132wc1");
+Math.seedrandom("isidi-i2l");
 
 LyngkTestCase.prototype.test1 = function () {
     var coord1 = new Lyngk.Coordinates('A', 1);
@@ -201,66 +201,59 @@ LyngkTestCase.prototype.test19 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
     var plateau = jeu.getplateau();
-    var B4 = new Lyngk.Coordinates('B', 4);
-    var B3 = new Lyngk.Coordinates('B', 3);
-    var B2 = new Lyngk.Coordinates('B', 2);
-    var B5 = new Lyngk.Coordinates('B', 5);
-    jeu.move(B5, B2);
-    assertEquals(Lyngk.State.ONE_PIECE, plateau[B5.hash()].getState());
-    assertEquals(Lyngk.State.ONE_PIECE, plateau[B2.hash()].getState());
-    jeu.move(B3, B4);
-    jeu.move(B4, B5);
-    jeu.move(B5, B2);
-    assertEquals(Lyngk.State.STACK, plateau[B2.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[B3.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[B4.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[B5.hash()].getState());
+    var I7 = new Lyngk.Coordinates('I', 7);
+    var H6 = new Lyngk.Coordinates('H', 6);
+    var H5 = new Lyngk.Coordinates('H', 5);
+    var H8 = new Lyngk.Coordinates('H', 8);
+    var F5 = new Lyngk.Coordinates('F', 5);
+    var F3 = new Lyngk.Coordinates('F', 3);
+    jeu.move(I7, H6);
+    jeu.move(H6, H5);
+    jeu.move(H5, H8);
+    jeu.move(H5, F5);
+    jeu.move(H5, F3);
+    assertEquals(Lyngk.State.VACANT, plateau[I7.hash()].getState());
+    assertEquals(Lyngk.State.VACANT, plateau[H6.hash()].getState());
+    assertEquals(Lyngk.State.STACK, plateau[H5.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE, plateau[H8.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE, plateau[F5.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE, plateau[F3.hash()].getState());
 };
 
 LyngkTestCase.prototype.test20 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
     var plateau = jeu.getplateau();
-    var B2 = new Lyngk.Coordinates('B', 2);
-    var C2 = new Lyngk.Coordinates('C', 2);
+    var E2 = new Lyngk.Coordinates('E', 2);
     var D2 = new Lyngk.Coordinates('D', 2);
     var D3 = new Lyngk.Coordinates('D', 3);
     var D4 = new Lyngk.Coordinates('D', 4);
     var D5 = new Lyngk.Coordinates('D', 5);
-    jeu.move(B2, C2);
-    jeu.move(C2, D2);
+    var C5 = new Lyngk.Coordinates('C', 5);
+    jeu.move(E2, D2);
     jeu.move(D2, D3);
     jeu.move(D3, D4);
     jeu.move(D4, D5);
-    assertEquals(Lyngk.State.VACANT, plateau[B2.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[C2.hash()].getState());
+    jeu.move(D5, C5);
+    assertEquals(Lyngk.State.VACANT, plateau[E2.hash()].getState());
     assertEquals(Lyngk.State.VACANT, plateau[D2.hash()].getState());
     assertEquals(Lyngk.State.VACANT, plateau[D3.hash()].getState());
-    assertEquals(Lyngk.State.FULL_STACK, plateau[D4.hash()].getState());
-    assertEquals(Lyngk.State.ONE_PIECE, plateau[D5.hash()].getState());
+    assertEquals(Lyngk.State.VACANT, plateau[D4.hash()].getState());
+    assertEquals(Lyngk.State.FULL_STACK, plateau[D5.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE, plateau[C5.hash()].getState());
 };
 
 LyngkTestCase.prototype.test21 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
     var plateau = jeu.getplateau();
-    var B4 = new Lyngk.Coordinates('B', 4);
+    var A3 = new Lyngk.Coordinates('A', 3);
     var B3 = new Lyngk.Coordinates('B', 3);
     var B2 = new Lyngk.Coordinates('B', 2);
-    var C2 = new Lyngk.Coordinates('C', 2);
-    var D2 = new Lyngk.Coordinates('D', 2);
-    var E2 = new Lyngk.Coordinates('E', 2);
-    jeu.move(B4, B3);
-    jeu.move(B3, B2);
-    jeu.move(B2, C2);
-    jeu.move(C2, D2);
-    jeu.move(D2, E2);
-    assertEquals(Lyngk.State.VACANT, plateau[B4.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[B3.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[B2.hash()].getState());
-    assertEquals(Lyngk.State.VACANT, plateau[C2.hash()].getState());
-    assertEquals(Lyngk.State.FULL_STACK, plateau[D2.hash()].getState());
-    assertEquals(Lyngk.State.ONE_PIECE, plateau[E2.hash()].getState());
+    jeu.move(A3, B3);
+    jeu.move(B2, B3);
+    assertEquals(Lyngk.State.STACK, plateau[B3.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE, plateau[B2.hash()].getState());
 };
 
 LyngkTestCase.prototype.test22 = function () {

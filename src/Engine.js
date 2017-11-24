@@ -76,6 +76,8 @@ Lyngk.Engine = function () {
         var idDesti = coordDestination.hash();
         var idDep = coordDepart.hash();
         var cTemp;
+        var i = 0;
+        var j;
         autorise = c0 - c1 === 0 || l0 - l1 === 0 || c0 - c1 === l0 - l1;
         autorise &= plateau[idDesti].getState() !== Lyngk.State.VACANT;
         while (autorise && ( c0 !== c1 || l0 !== l1 )) {
@@ -89,6 +91,14 @@ Lyngk.Engine = function () {
         }
         autorise &= plateau[idDep].getState() !== Lyngk.State.FULL_STACK;
         autorise &= plateau[idDep].hauteur()>=plateau[idDesti].hauteur();
+        while (autorise && i < plateau[idDep].hauteur()) {
+            j = 0;
+            while (autorise && j < plateau[idDesti].hauteur()) {
+                autorise &= plateau[idDep].getColors(i) != plateau[idDesti].getColors(j);
+                j++;
+            }
+            i++;
+        }
         return autorise;
     };
     this.move = function (coordDepart, coordDestination) {

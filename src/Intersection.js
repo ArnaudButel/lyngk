@@ -38,6 +38,13 @@ Lyngk.Intersection = function () {
             return null;
         }
     };
+    this.getColors = function (id_piece) {
+        if (this.getState() !== Lyngk.State.VACANT) {
+            return pieces[id_piece].getColor();
+        } else {
+            return null;
+        }
+    };
 
     this.hauteur = function () {
         return pieces.length;
