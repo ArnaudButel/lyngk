@@ -23,8 +23,8 @@
       <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="243" column="22" lean-forward="true" selection-start-line="243" selection-start-column="22" selection-end-line="243" selection-end-column="22" />
+            <state relative-caret-position="447">
+              <caret line="277" column="67" lean-forward="true" selection-start-line="277" selection-start-column="67" selection-end-line="277" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -346,7 +346,7 @@
       <workItem from="1510646749536" duration="10087000" />
       <workItem from="1510748049360" duration="22000" />
       <workItem from="1511423027489" duration="13000" />
-      <workItem from="1511512421652" duration="843000" />
+      <workItem from="1511512421652" duration="1078000" />
     </task>
     <task id="LOCAL-00001" summary="Test 1 qui fonctionne avec la fonction isValide de Coordinate">
       <created>1506692083775</created>
@@ -551,19 +551,17 @@
       <option name="project" value="LOCAL" />
       <updated>1510657109818</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="test 21 qui passe déjà">
+      <created>1511513374416</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1511513374416</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests - 2017.11.14 at 11h 50m 48s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 11h 51m 00s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
-    <history-entry file="Tests - 2017.11.14 at 11h 51m 05s.xml">
-      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
-    </history-entry>
     <history-entry file="Tests - 2017.11.14 at 11h 52m 44s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
@@ -585,9 +583,18 @@
     <history-entry file="Tests - 2017.11.24 at 09h 48m 07s.xml">
       <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
     </history-entry>
+    <history-entry file="Tests - 2017.11.24 at 09h 51m 48s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.11.24 at 09h 52m 01s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
+    <history-entry file="Tests - 2017.11.24 at 09h 52m 18s.xml">
+      <configuration name="Tests" configurationId="JsTestDriver-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77217000" />
+    <option name="totallyTimeSpent" value="77452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
@@ -648,7 +655,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fonction du test 5 pour cloer l'objet" />
     <MESSAGE value="Test 6 hash" />
     <MESSAGE value="Test 6 corrigé (oublie d'un t a assert)&#10;fonction du test 6 hash" />
     <MESSAGE value="Test 7" />
@@ -673,7 +679,8 @@
     <MESSAGE value="test 20" />
     <MESSAGE value="modification de la fonction move pour l'histoire 20" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="test 21 qui passe déjà" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 21 qui passe déjà" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -844,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="243" column="22" lean-forward="true" selection-start-line="243" selection-start-column="22" selection-end-line="243" selection-end-column="22" />
+        <state relative-caret-position="447">
+          <caret line="277" column="67" lean-forward="true" selection-start-line="277" selection-start-column="67" selection-end-line="277" selection-end-column="67" />
           <folding />
         </state>
       </provider>
