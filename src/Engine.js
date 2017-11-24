@@ -109,6 +109,11 @@ Lyngk.Engine = function () {
             for (i in piece) {
                 plateau[coordDestination.hash()].putPiece(piece[i]);
             }
+            if (joueur === 1) {
+                joueur = 2;
+            } else {
+                joueur = 1;
+            }
         }
     };
 
