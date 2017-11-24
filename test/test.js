@@ -1,6 +1,7 @@
 'use strict';
 
 var LyngkTestCase = TestCase("LyngkTestCase");
+Math.seedrandom("sd5v132wc1");
 
 LyngkTestCase.prototype.test1 = function () {
     var coord1 = new Lyngk.Coordinates('A', 1);
@@ -277,4 +278,22 @@ LyngkTestCase.prototype.test22 = function () {
     jeu.move(H6, G6);
     assertEquals(Lyngk.State.STACK, plateau[H6.hash()].getState());
     assertEquals(Lyngk.State.STACK, plateau[G6.hash()].getState());
+};
+
+
+LyngkTestCase.prototype.test23 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    var plateau = jeu.getplateau();
+    var B2 = new Lyngk.Coordinates('B', 2);
+    var C2 = new Lyngk.Coordinates('C', 2);
+    var D2 = new Lyngk.Coordinates('D', 2);
+    var E2 = new Lyngk.Coordinates('E', 2);
+    jeu.move(B2, C2);
+    jeu.move(C2, D2);
+    jeu.move(D2, E2);
+    assertEquals(Lyngk.State.VACANT, plateau[B2.hash()].getState());
+    assertEquals(Lyngk.State.VACANT, plateau[C2.hash()].getState());
+    assertEquals(Lyngk.State.STACK, plateau[D2.hash()].getState());
+    assertEquals(Lyngk.State.ONE_PIECE, plateau[E2.hash()].getState());
 };
