@@ -88,6 +88,7 @@ Lyngk.Engine = function () {
             autorise |= c0 === c1 && l0 === l1;
         }
         autorise &= plateau[idDep].getState() !== Lyngk.State.FULL_STACK;
+        autorise &= plateau[idDep].hauteur()>=plateau[idDesti].hauteur();
         return autorise;
     };
     this.move = function (coordDepart, coordDestination) {
