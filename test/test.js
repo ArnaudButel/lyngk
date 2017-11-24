@@ -273,7 +273,6 @@ LyngkTestCase.prototype.test22 = function () {
     assertEquals(Lyngk.State.STACK, plateau[G6.hash()].getState());
 };
 
-
 LyngkTestCase.prototype.test23 = function () {
     var jeu = new Lyngk.Engine();
     jeu.initPlateau();
@@ -289,4 +288,10 @@ LyngkTestCase.prototype.test23 = function () {
     assertEquals(Lyngk.State.VACANT, plateau[C2.hash()].getState());
     assertEquals(Lyngk.State.STACK, plateau[D2.hash()].getState());
     assertEquals(Lyngk.State.ONE_PIECE, plateau[E2.hash()].getState());
+};
+
+LyngkTestCase.prototype.test24 = function () {
+    var jeu = new Lyngk.Engine();
+    jeu.initPlateau();
+    assertEquals(1, jeu.getJoueur());
 };
